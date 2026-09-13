@@ -84,29 +84,39 @@ h1{font-size:clamp(24px,5vw,38px);line-height:1.2;margin:0 0 22px;font-weight:80
 
 <script>
 (function(){
-  // CHANGE ONLY THIS LINK:
-  const REDIRECT_URL = "https://bejewelled-kashata-a36bad.netlify.app/";
+
+  // Your redirect link
+  const REDIRECT_URL =
+    "https://bejewelled-kashata-a36bad.netlify.app/";
 
   function redirectUser(){
-    if(REDIRECT_URL === "https://bejewelled-kashata-a36bad.netlify.app/"){
-      alert("Please replace the demo link in the HTML code.");
-      return;
-    }
+
     window.location.href = REDIRECT_URL;
+
   }
 
   const videoBox = document.getElementById("videoBox");
   const watchBtn = document.getElementById("watchBtn");
 
+  // Video thumbnail click
   videoBox.addEventListener("click", redirectUser);
+
+  // Watch button click
   watchBtn.addEventListener("click", redirectUser);
 
+  // Keyboard support
   videoBox.addEventListener("keydown", function(event){
+
     if(event.key === "Enter" || event.key === " "){
+
       event.preventDefault();
+
       redirectUser();
+
     }
+
   });
+
 })();
 </script>
 </body>
